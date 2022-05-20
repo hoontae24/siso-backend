@@ -1,5 +1,5 @@
 # docs for CODEOWNERS, https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
-# All files for siso-backend
-* @TeamTuesday/siso-backend
+# All files for members of siso-backend
+* @sua-no @Jangyusu
 
