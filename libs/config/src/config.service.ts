@@ -13,7 +13,6 @@ export class ConfigService {
   public get port(): number {
     const { PORT } = this.env;
     const port = (PORT && parseInt(PORT)) || 3000;
-    console.log('port', port);
     return port;
   }
 }
