@@ -1,3 +1,4 @@
+import { ConfigService } from '@config/config';
 import { INestApplication } from '@nestjs/common';
 import {DocumentBuilder, SwaggerModule} from "@nestjs/swagger";
 
@@ -9,6 +10,6 @@ export const setupSwagger = (app: INestApplication) => {
         .build();
 
     const document = SwaggerModule.createDocument(app, config);
-    const path = process.env.SWAGGER_PATH || 'api-docs';
-    SwaggerModule.setup(path, app, document);
+    const { swaggerPath } = app.get(ConfigService);
+    SwaggerModule.setup(swaggerPath, app, document);
 };
