@@ -21,4 +21,26 @@ export class ConfigService {
     const path = SWAGGER_PATH || 'api-docs';
     return path;
   }
+
+  public get database(): {
+    host: string;
+    port: number;
+    username: string;
+    password: string;
+    name: string;
+  } {
+    const {
+      DATABASE_HOST,
+      DATABASE_PORT,
+      DATABASE_USERNAME,
+      DATABASE_PASSWORD,
+      DATABASE_NAME,
+    } = this.env;
+    const host = DATABASE_HOST ?? 'localhost';
+    const port = (DATABASE_PORT && parseInt(DATABASE_PORT)) || 5432;
+    const username = DATABASE_USERNAME ?? 'postgres';
+    const password = DATABASE_PASSWORD ?? 'postgres';
+    const name = DATABASE_NAME ?? 'postgres';
+    return { host, port, username, password, name };
+  }
 }
