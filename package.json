@@ -74,7 +74,8 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@config/config(|/.*)$": "<rootDir>/libs/config/src/$1"
+      "^@config/config(|/.*)$": "<rootDir>/libs/config/src/$1",
+      "^@app/document(|/.*)$": "<rootDir>/libs/document/src/$1"
     }
   }
 }
