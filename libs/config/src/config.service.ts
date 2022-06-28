@@ -15,4 +15,10 @@ export class ConfigService {
     const port = (PORT && parseInt(PORT)) || 3000;
     return port;
   }
+
+  public get swaggerPath(): string {
+    const { SWAGGER_PATH } = this.env;
+    const path = SWAGGER_PATH || 'api-docs';
+    return path;
+  }
 }

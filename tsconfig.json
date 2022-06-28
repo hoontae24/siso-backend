@@ -21,6 +21,12 @@
       ],
       "@config/config/*": [
         "libs/config/src/*"
+      ],
+      "@app/document": [
+        "libs/document/src"
+      ],
+      "@app/document/*": [
+        "libs/document/src/*"
       ]
     }
   }
