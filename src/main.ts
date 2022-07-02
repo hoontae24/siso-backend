@@ -1,5 +1,5 @@
 import { ConfigService } from '@config/config';
-import { DocumentService } from "@app/document";
+import { DocumentService } from '@app/document';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
