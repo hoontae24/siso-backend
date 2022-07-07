@@ -49,3 +49,10 @@ $ yarn test:e2e
 # test coverage
 $ yarn test:cov
 ```
+
+## 데이터 베이스 환경 구성
+
+1. 서버 구동 전 DB는 생성되어 있어야한다.
+2. `.env`에 db 접속 정보를 저장한다. (DATABASE_HOST, DATABASE_PORT, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_NAME)
+   2-1. database.service에 synchronize 옵션을 true로 변경하면 entity에 따라 테이블이 생성된다.
+3. 서버 실행
