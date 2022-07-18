@@ -19,7 +19,6 @@ export class DatabaseService implements TypeOrmOptionsFactory {
       entities: [VoteSubject],
       migrations: [__dirname + 'src/migration/*.ts'],
       cli: {
-        entitiesDir: 'src/entity',
         migrationsDir: 'src/migration',
       },
     };

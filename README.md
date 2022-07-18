@@ -56,3 +56,16 @@ $ yarn test:cov
 2. `.env`에 db 접속 정보를 저장한다. (DATABASE_HOST, DATABASE_PORT, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_NAME)
    2-1. database.service에 synchronize 옵션을 true로 변경하면 entity에 따라 테이블이 생성된다.
 3. 서버 실행
+
+## 마이그레이션
+
+```sh
+# migration
+$ yarn migration
+
+# migration file create
+$ yarn migration:create [file name]
+
+# migration revert
+$ yarn migration:revert
+```
