@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from '@nestjs/typeorm';
-import { VoteSubject } from 'src/vote-subject/entity/vote-subject.entity';
+import { VoteSubject } from 'src/vote-subjects/entities/vote-subject.entity'; // FIXME `libs` 하위 모듈에서 `src`를 참조하는 것은 참조 방향이 잘못됨.
 import { ConfigService } from '../config.service';
 
 @Injectable()
