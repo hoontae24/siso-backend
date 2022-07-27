@@ -69,3 +69,11 @@ $ yarn migration:create [file name]
 # migration revert
 $ yarn migration:revert
 ```
+
+## seed 추가
+
+db및 테이블 생성된 상태에서 진행해야한다.
+
+```sh
+$ yarn seed:run
+```

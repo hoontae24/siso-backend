@@ -1,39 +1,21 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { VoteSubject } from './entities/vote-subject.entity';
 
 @Injectable()
 export class VoteSubjectsService {
-  async findAll() {
-    return dummy;
+  constructor(
+    @InjectRepository(VoteSubject)
+    private voteSubjectRepository: Repository<VoteSubject>,
+  ) {
+    this.voteSubjectRepository = voteSubjectRepository;
+  }
+  async findAll(): Promise<VoteSubject[]> {
+    return this.voteSubjectRepository.find();
   }
 
-  async findById(id: string) {
-    return dummy.find((item) => item.id === id) ?? null;
+  async findById(id: number): Promise<VoteSubject | undefined> {
+    return this.voteSubjectRepository.findOne({ id });
   }
 }
-
-const dummy = [
-  {
-    id: 'a',
-    title: '테스트 제목 1',
-    agreeDescription: '찬성a',
-    oppositeDescription: '반대a',
-    voteAgreeCount: 1590,
-    voteOppositeCount: 590,
-  },
-  {
-    id: 'b',
-    title: '테스트 제목 2',
-    agreeDescription: '찬성b',
-    oppositeDescription: '반대b',
-    voteAgreeCount: 159080,
-    voteOppositeCount: 10,
-  },
-  {
-    id: 'c',
-    title: '테스트 제목 3',
-    agreeDescription: '찬성c',
-    oppositeDescription: '반대c',
-    voteAgreeCount: 12,
-    voteOppositeCount: 0,
-  },
-];
