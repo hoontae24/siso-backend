@@ -20,18 +20,18 @@ export class VoteSubject {
   @UpdateDateColumn({ name: 'updated_at', nullable: true, default: null })
   updatedAt?: Date;
 
-  @Column({ nullable: false })
-  agree_description!: string;
+  @Column({ name: 'agree_description', nullable: false })
+  agreeDescription!: string;
 
-  @Column({ nullable: false })
-  opposite_description!: string;
+  @Column({ name: 'opposite_description', nullable: false })
+  oppositeDescription!: string;
 
-  @Column({ nullable: false, default: 0 })
-  vote_agree_count!: number;
+  @Column({ name: 'vote_agree_count', nullable: false, default: 0 })
+  voteAgreeCount!: number;
 
-  @Column({ nullable: false, default: 0 })
-  vote_opposite_count!: number;
+  @Column({ name: 'vote_opposite_count', nullable: false, default: 0 })
+  voteOppositeCount!: number;
 
-  @Column({ nullable: false, default: 0 })
-  vote_count!: number;
+  @Column({ name: 'vote_count', nullable: false, default: 0 })
+  voteCount!: number;
 }
