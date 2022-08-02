@@ -9,16 +9,16 @@ import {
 @Entity()
 export class VoteSubject {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id!: string;
 
   @Column({ nullable: false, length: 100 })
   title!: string;
 
-  @CreateDateColumn({ nullable: false })
-  created!: Date;
+  @CreateDateColumn({ name: 'created_at', nullable: false })
+  createdAt!: Date;
 
-  @UpdateDateColumn({ nullable: true, default: null })
-  updated?: Date;
+  @UpdateDateColumn({ name: 'updated_at', nullable: true, default: null })
+  updatedAt?: Date;
 
   @Column({ nullable: false })
   agree_description!: string;

@@ -15,7 +15,7 @@ export class VoteSubjectsService {
     return this.voteSubjectRepository.find();
   }
 
-  async findById(id: number): Promise<VoteSubject | undefined> {
-    return this.voteSubjectRepository.findOne({ id });
+  async findById(id: string): Promise<VoteSubject | undefined> {
+    return this.voteSubjectRepository.findOne(id);
   }
 }
