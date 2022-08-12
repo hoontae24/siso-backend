@@ -4,11 +4,12 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  DeleteDateColumn,
 } from 'typeorm';
 
 @Entity()
 export class VoteSubject {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id!: string;
 
   @Column({ nullable: false, length: 100 })
@@ -17,8 +18,11 @@ export class VoteSubject {
   @CreateDateColumn({ name: 'created_at', nullable: false })
   createdAt!: Date;
 
-  @UpdateDateColumn({ name: 'updated_at', nullable: true, default: null })
-  updatedAt?: Date;
+  @UpdateDateColumn({ name: 'updated_at', nullable: false })
+  updatedAt!: Date;
+
+  @DeleteDateColumn({ name: 'deleted_at', nullable: true, default: null })
+  deletedAt?: Date;
 
   @Column({ name: 'agree_description', nullable: false })
   agreeDescription!: string;

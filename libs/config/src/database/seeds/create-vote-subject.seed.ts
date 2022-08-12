@@ -10,9 +10,7 @@ export class CreateInitialVoteSubject implements Seeder {
       .into(VoteSubject)
       .values([
         {
-          id: '1',
           title: '둘 중에 더 가기 무서운 여행은?',
-          createdAt: `${new Date()}`,
           agreeDescription: '김정은과 미국 여행',
           oppositeDescription: '트럼프와 북한 여행',
           voteAgreeCount: 10,
@@ -20,9 +18,7 @@ export class CreateInitialVoteSubject implements Seeder {
           voteCount: 20,
         },
         {
-          id: '2',
           title: '닭이 먼저냐 달걀이 먼저냐',
-          createdAt: `${new Date()}`,
           agreeDescription: '닭',
           oppositeDescription: '달걀',
           voteAgreeCount: 2,
@@ -30,9 +26,7 @@ export class CreateInitialVoteSubject implements Seeder {
           voteCount: 4,
         },
         {
-          id: '3',
           title: '누가 더 괘씸하세요?',
-          createdAt: `${new Date()}`,
           agreeDescription:
             '밤새 내 과제를 도와줬지만 결과적으로 과제를 날린 A',
           oppositeDescription:

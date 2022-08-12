@@ -8,14 +8,13 @@ export class VoteSubjectsService {
   constructor(
     @InjectRepository(VoteSubject)
     private voteSubjectRepository: Repository<VoteSubject>,
-  ) {
-    this.voteSubjectRepository = voteSubjectRepository;
-  }
-  async findAll(): Promise<VoteSubject[]> {
+  ) {}
+  findAll(): Promise<VoteSubject[]> {
     return this.voteSubjectRepository.find();
   }
 
-  async findById(id: string): Promise<VoteSubject | undefined> {
-    return this.voteSubjectRepository.findOne(id);
+  async findById(id: string): Promise<VoteSubject | null> {
+    const result = await this.voteSubjectRepository.findOne(id);
+    return result ?? null;
   }
 }
