@@ -17,4 +17,4 @@ const config: TypeOrmModuleOptions = {
   },
 };
 
-export = config;
+export default config;
