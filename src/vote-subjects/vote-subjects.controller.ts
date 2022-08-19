@@ -1,4 +1,10 @@
-import { Controller, Get, NotFoundException, Param } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  NotFoundException,
+  Param,
+  ParseUUIDPipe,
+} from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { VoteSubjectsService } from './vote-subjects.service';
 
@@ -25,7 +31,7 @@ export class VoteSubjectsController {
     summary: '투표 주제 조회',
     description: '특정 ID에 대한 투표 주제를 조회한다.',
   })
-  async findById(@Param('id') id: string) {
+  async findById(@Param('id', new ParseUUIDPipe()) id: string) {
     const voteSubject = await this.voteSubjectService.findById(id);
     if (!voteSubject) {
       throw new NotFoundException(`Not found vote-subject by id "${id}"`);

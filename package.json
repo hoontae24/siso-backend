@@ -18,10 +18,12 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config src/ormconfig.ts",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config libs/config/ormconfig.ts",
     "migration": "yarn typeorm migration:run",
     "migration:create": "yarn typeorm migration:create -n",
-    "migration:revert": "yarn typeorm migration:revert"
+    "migration:revert": "yarn typeorm migration:revert",
+    "seed:config": "ts-node ./node_modules/typeorm-seeding/dist/cli.js config",
+    "seed:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm-seeding/dist/cli.js --configName libs/config/ormconfig.ts seed"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
@@ -31,11 +33,11 @@
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/swagger": "^5.2.1",
     "@nestjs/typeorm": "^8.0.2",
+    "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
     "swagger-ui-express": "^4.4.0",
-    "pg": "^8.7.3",
     "typeorm": "^0.2.41"
   },
   "devDependencies": {
@@ -59,6 +61,7 @@
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "4.0.0",
+    "typeorm-seeding": "^1.6.1",
     "typescript": "^4.3.5"
   },
   "jest": {
